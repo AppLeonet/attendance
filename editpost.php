@@ -24,10 +24,12 @@ if(isset($_POST['submit'])){
     if($result) {
         header("Location: viewrecords.php");
     } else {
-        echo 'error';
+        //echo 'error';
+        include 'includes/errormessage.php';
     }
 } else {
-    echo 'error';
+    //echo 'error';
+    include 'includes/errormessage.php';
 }
 ?>
 <?php require_once 'includes/footer.php'; ?>

@@ -5,7 +5,8 @@
 
     //get attendee by id
     if(!isset($_GET['id'])) {
-        echo '<h1 class="text-center text-danger">please check details and try again</h1>';
+        //echo '<h1 class="text-center text-danger">please check details and try again</h1>';
+        include 'includes/errormessage.php';
         
     } else {
         $id = $_GET['id'];
@@ -26,5 +27,11 @@
     <p class="card-text">Contact Number: <?php echo $result['contactnumber'] ?></p>
   </div>
 </div>
+<br/>
+            <a href="viewrecords.php" class="btn btn-info">Back to List</a>
+            <a href="edit.php?id=<?php echo $result['attendee_id']?>" class="btn btn-warning">Edit</a>
+            <a onclick="return confirm('Are you sure you want to delete this record?');" 
+            href="delete.php?id=<?php echo $result['attendee_id']?>" class="btn btn-danger">Delete</a>
+
 <?php }?>
 <?php require_once 'includes/footer.php'; ?>

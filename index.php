@@ -11,12 +11,12 @@
     <form method="post" action="success.php">
     <div class="mb-3">
     <label for="firstname">First Name</label>
-    <input type="text" class="form-control" id="firstname" name="firstname">
+    <input required type="text" class="form-control" id="firstname" name="firstname">
     </div>
 
     <div class="mb-3">
     <label for="lastname">Last Name</label>
-    <input type="text" class="form-control" id="lastname" name="lastname">
+    <input required type="text" class="form-control" id="lastname" name="lastname">
   </div>
 
   <div class="mb-3">
@@ -39,7 +39,7 @@
   </div>
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+    <input required type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
 

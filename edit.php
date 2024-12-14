@@ -5,8 +5,9 @@
 
     $results = $crud->getSpecialties();
     if(!isset($_GET['id'])) {
-        echo 'error';
-        
+        //echo 'error';
+        include 'includes/errormessage.php';
+        header("Location: viewrecords.php");
     } else {
         $id = $_GET['id'];
         $attendee = $crud->getAttendeeDetails($id);
@@ -59,7 +60,8 @@
     <div id="phoneHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   
-  <button type="submit" name="submit" class="btn btn-success btn-block" >Save Changes</button>
+  <a href="viewrecords.php" class="btn btn-default" >Back to List</a>
+  <button type="submit" name="submit" class="btn btn-success" >Save Changes</button>
 </form>
 <?php }?>
 <?php require_once 'includes/footer.php'; ?>
