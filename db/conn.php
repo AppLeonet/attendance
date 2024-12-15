@@ -25,7 +25,7 @@
 
 <?php
 // Get the DATABASE_URL environment variable from Heroku
-$database_url = getenv("DATABASE_URL");
+$database_url = getenv("postgres://u9rcruifdh6u3s:p8a62f1bc5e652f2eff3e00573baf1561a4324b302231d3318ec14ae98d93f4b7@cat670aihdrkt1.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d194o2jdi4gg9j");
 
 if (!$database_url) {
     die("DATABASE_URL environment variable not set. Please ensure your Heroku app is configured with the Postgres database.");
