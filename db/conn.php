@@ -23,7 +23,8 @@
 
 <?php
 $host = 'cat670aihdrkt1.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com';
-$db = 'd194o2jdi4gg9j';
+//$db = 'd194o2jdi4gg9j';
+$db = 'attendance_db';
 $user = 'u9rcruifdh6u3s';
 $pass = 'p8a62f1bc5e652f2eff3e00573baf1561a4324b302231d3318ec14ae98d93f4b7';
 $charset = 'utf8';
