@@ -1,8 +1,16 @@
-<!--?php 
-    $host = '127.0.0.1';
-    $db = 'attendance_db';
-    $user = 'root';
-    $pass = '';
+<?php 
+    // Development Connection
+    //$host = '127.0.0.1';
+    //$db = 'attendance_db';
+    //$user = 'root';
+    //$pass = '';
+    //$charset = 'utf8mb4';
+
+    // Remote Database Connection
+    $host = 'sql5.freesqldatabase.com';
+    $db = 'sql5755171';
+    $user = 'sql5755171';
+    $pass = 'ZerIkSMwKZ';
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -19,48 +27,5 @@
 
     require_once 'crud.php'; 
     $crud = new crud($pdo);
-?-->
-
-
-
-<?php
-// Get the DATABASE_URL environment variable from Heroku
-$database_url = getenv("postgres://u9rcruifdh6u3s:p8a62f1bc5e652f2eff3e00573baf1561a4324b302231d3318ec14ae98d93f4b7@cat670aihdrkt1.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d194o2jdi4gg9j");
-
-if (!$database_url) {
-    die("DATABASE_URL environment variable not set. Please ensure your Heroku app is configured with the Postgres database.");
-}
-
-// Parse the DATABASE_URL
-$parsed_url = parse_url($database_url);
-
-// Extract components from the parsed URL
-$host = $parsed_url["host"];
-$db = ltrim($parsed_url["path"], '/'); // Remove the leading '/' from the database name
-$user = $parsed_url["user"];
-$pass = $parsed_url["pass"];
-$port = $parsed_url["port"];
-$charset = 'utf8';
-
-// Create the DSN (Data Source Name) for PostgreSQL
-$dsn = "pgsql:host=$host;port=$port;dbname=$db;user=$user;password=$pass;charset=$charset";
-
-try {
-    // Create a new PDO instance for PostgreSQL
-    $pdo = new PDO($dsn);
-
-    // Set error mode to exception for better debugging
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Uncomment the line below for debugging connection success
-    // echo 'Connected successfully to Heroku PostgreSQL!';
-} catch (PDOException $e) {
-    // Throw the exception if the connection fails
-    throw new PDOException($e->getMessage());
-}
-
-// Include your CRUD operations class
-require_once 'crud.php'; 
-$crud = new crud($pdo);
 ?>
 
