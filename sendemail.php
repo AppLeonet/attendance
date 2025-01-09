@@ -3,7 +3,7 @@
 
     class SendEmail {
         public static function SendMail($to,$subject,$content) {
-            $key = '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';
+            //$key = 'API Key removed for secure GitHub push';
 
             $email = new \SendGrid\Mail\Mail();
             $email->setFrom("hozhengmandeng@gmail.com", "Leo Ho");
