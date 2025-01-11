@@ -8,7 +8,7 @@
 
     <h1 class="text-center">Registration for IT Conference</h1>
 
-    <form method="post" action="success.php">
+    <form method="post" action="success.php" enctype="multipart/form-data">
     <div class="mb-3">
     <label for="firstname">First Name</label>
     <input required type="text" class="form-control" id="firstname" name="firstname">
@@ -40,15 +40,22 @@
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
     <input required type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
 
   <div class="mb-3">
     <label for="phone" class="form-label">Contact Number</label>
     <input type="text" class="form-control" id="phone" name="phone" aria-describedby="phoneHelp">
-    <div id="phoneHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <small id="phoneHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
-  
+        
+  <div class="custom-file">
+    <input type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
+    <label class="custom-file-label" for="avatar">Choose File</label>
+    <small id="avatar" class="form-text text-danger">File Upload is Optional</small>
+  </div>
+
   <button type="submit" name="submit" class="btn btn-primary btn-block" >Submit</button>
 </form>
+
 <?php require_once 'includes/footer.php'; ?>
